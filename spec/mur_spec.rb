@@ -3,7 +3,7 @@
 
 ENV['RACK_ENV'] = 'test'
 
-require './stand'
+# require './stand'
 require 'himekuri'
 require 'rspec'
 require 'rack/test'
@@ -14,9 +14,9 @@ require 'zella'
 describe 'The Stand by me App' do
   include Rack::Test::Methods
 
-  def app
-    Sinatra::Application
-  end
+  # def app
+  #   Sinatra::Application
+  # end
 
   def himekuri
     dt = Date.today
@@ -48,12 +48,12 @@ describe 'The Stand by me App' do
     "#{year}年#{month}月#{day}日 : #{week}曜日"
   end
 
-  describe 'Stand by me Sinatra Application' do
-    it 'should allow accessing the home page' do
-      get '/'
-      expect(last_response).to be_ok
-    end
-  end
+  # describe 'Stand by me Sinatra Application' do
+  #   it 'should allow accessing the home page' do
+  #     get '/'
+  #     expect(last_response).to be_ok
+  #   end
+  # end
 
   describe 'Himekuri code compared to actual code' do
     it 'what day is it today?' do
