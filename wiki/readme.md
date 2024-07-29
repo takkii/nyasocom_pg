@@ -1,4 +1,4 @@
-#### postgresql側
+#### postgresql
 
 ```markdown
 # DB作成 CUI
@@ -21,9 +21,12 @@ CREATE TABLE nyasocom
 \copy nyasocom from '~/nyasocom_pg/web/rss.csv' with csv
 ```
 
-#### ユーザ/パスワード、設定をしない。 
+#### ユーザ/パスワード、一部trustで許可を与える。 
 
+```markdown
+# 使用中、postgresqlバージョンに置き換える
 cd /etc/postgresql/16/main
+```
 
 ```markdown
 ...
@@ -35,4 +38,4 @@ local   all             all                                     trust # scram-sh
 ...
 ```
 
-_クエリの操作が必要、UNIX環境を推奨します_
+_クエリの操作が必要です。動作には、UNIX環境を推奨します。_
