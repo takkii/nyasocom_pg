@@ -1,11 +1,17 @@
 #### データの入れ子。
 
 ```markdown
-# db作成
+# DB作成 CUI
 createdb nyasocom
 
+# DB作成 psql内
+create database nyasocom;
+
 # dbに接続
-psql nyasocom 
+psql nyasocom
+
+# postgresユーザ、nyasocomデータベースに接続
+psql -U postgres -d nyasocom;
 
 # テーブル作成
 CREATE TABLE nyasocom
