@@ -1,4 +1,4 @@
-#### データの入れ子。
+#### postgresql側
 
 ```markdown
 # DB作成 CUI
@@ -21,4 +21,18 @@ CREATE TABLE nyasocom
 \copy nyasocom from '~/nyasocom_pg/web/rss.csv' with csv
 ```
 
-_UNIX環境推奨: DB操作が必要_
+#### ユーザ/パスワード、設定をしない。 
+
+cd /etc/postgresql/16/main
+
+```markdown
+...
+
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+# "local" is for Unix domain socket connections only
+local   all             all                                     trust # scram-sha-256
+
+...
+```
+
+_クエリの操作が必要、UNIX環境を推奨します_
