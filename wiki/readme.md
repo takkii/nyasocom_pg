@@ -21,4 +21,4 @@ CREATE TABLE nyasocom
 \copy nyasocom from '~/nyasocom_pg/web/rss.csv' with csv
 ```
 
-_DB操作が必要_
+_UNIX環境推奨: DB操作が必要_
