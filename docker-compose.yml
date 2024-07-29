@@ -1,0 +1,19 @@
+services:
+  web:
+    build: .
+    command: >
+      bash -c 'bundle exec rackup --host=0.0.0.0'
+    volumes:
+      - .:/nyasocom_oss
+      - bundle:/usr/local/bundle
+  proxy:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    links:
+      - "web"
+
+volumes:
+  bundle:
