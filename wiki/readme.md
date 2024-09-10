@@ -24,7 +24,10 @@ CREATE TABLE nyasocom
 #### ユーザ/パスワード、一部trustで許可を与える。 
 
 ```markdown
-# 使用中、postgresqlバージョンに置き換える
+# pg_hba.confの場所を探す
+sudo find / -name pg_hba.conf
+
+# 下記パスにあったとき、移動する
 cd /etc/postgresql/16/main
 ```
 
